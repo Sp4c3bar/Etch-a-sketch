@@ -1,0 +1,26 @@
+.mainContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  width: 600px;
+  height: 600px;
+}
+
+.board {
+  width: 600px;
+  height: 600px;
+}
+
+.row {
+  max-height: 30px;
+}
+
+.box {
+  width: 90px;
+  height: 90px;
+  background-color: red;
+}
+
+.p {
+  background-color: red;
+}
