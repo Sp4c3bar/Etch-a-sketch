@@ -1,7 +1,6 @@
 console.log("It's working!")
 
-const drawingBoard = document.querySelector('.board')
-
+const drawingBoard = document.querySelector('.board');
 
 gridSize = 4
 
@@ -36,18 +35,36 @@ function createGridOf(numBox) {
 
 createGridOf(gridSize)
 
-const pixelText = document.querySelectorAll(".box")
+const boxes = document.querySelectorAll(".box")
 
-i = 1;
-pixelText.forEach(element => {
-    element.textContent = i;
-    i += 1; 
-});
-    
+function addNumberToBoxes() {
+    i = 1;
+    boxes.forEach(element => {
+        element.textContent = i;
+        i += 1; 
+    });
+}
+
+addNumberToBoxes();
+
+function addClickToBoxes() {
+    boxes.forEach(box => {
+        box.addEventListener('click', () => {
+            console.log("make it Shake")
+        })
+    })
+}
+
+addClickToBoxes();
+
+
+
+
+
 // functions
 // 1. create grid size based on user input
 // 2. change color of input
 // 3. draw when clicked
 
 
-console.log(pixelText)
+console.log(boxes)
