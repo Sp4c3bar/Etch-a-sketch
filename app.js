@@ -3,9 +3,18 @@ console.log("It's working!")
 const drawingBoard = document.querySelector('.board')
 
 
+gridSize = 4
+
 // const grid = document.createElement('div')
 
 function createGridOf(numBox) {
+    drawingBoard.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
+    drawingBoard.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+    //rows.style.gridRow = `span 1`;
+    document.querySelectorAll('.row').forEach(el => el.gridColumn = 'span 1');
+
+    console.log(gridSize)
+
     let counter = 0
     for (let i = 0; i < numBox; i++) {
         const row = drawingBoard.appendChild(document.createElement('div'));
@@ -14,14 +23,31 @@ function createGridOf(numBox) {
             const column = row.appendChild((document.createElement('div')));
             column.classList.add('box', `number${counter + 1}`,`column${x + 1}`) 
             counter += 1
-            console.log(counter)
-            const pixelText = document.querySelector(`.box`)
-            pixelText.textContent += "hello"
+            // console.log(counter)
+           //  console.log(pixelText[counter])
+            
+        
 
             
         }
+        
     }
 }
 
+createGridOf(gridSize)
 
-createGridOf(4)
+const pixelText = document.querySelectorAll(".box")
+
+i = 1;
+pixelText.forEach(element => {
+    element.textContent = i;
+    i += 1; 
+});
+    
+// functions
+// 1. create grid size based on user input
+// 2. change color of input
+// 3. draw when clicked
+
+
+console.log(pixelText)
