@@ -35,6 +35,13 @@ function createGridOf(numBox) {
 
 createGridOf(gridSize)
 
+// functions
+// 1. add numbers to boxes
+// 2. change color when clicked
+// 3. color select option
+// 4. reset option
+// 5. 
+
 const boxes = document.querySelectorAll(".box")
 
 function addNumberToBoxes() {
@@ -47,9 +54,12 @@ function addNumberToBoxes() {
 
 addNumberToBoxes();
 
+selectedColor = 'blue'
+
 function addClickToBoxes() {
     boxes.forEach(box => {
         box.addEventListener('click', () => {
+            box.style.backgroundColor = selectedColor
             console.log("make it Shake")
         })
     })
@@ -61,10 +71,7 @@ addClickToBoxes();
 
 
 
-// functions
-// 1. create grid size based on user input
-// 2. change color of input
-// 3. draw when clicked
+
 
 
 console.log(boxes)
